@@ -90,20 +90,25 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-500 to-blue-400 flex items-center justify-center p-4">
-      <div className="max-w-md w-full space-y-8 bg-white rounded-2xl shadow-2xl p-8 border border-gray-200">
+    <div 
+      className="min-h-screen flex items-center justify-center p-4 bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: 'url("/mmust.jpeg")'
+      }}
+    >
+      <div className="max-w-sm w-full space-y-6 bg-white rounded-xl shadow-xl p-6 border border-gray-200">
         {/* Header */}
         <div className="text-center">
-          <div className="mx-auto h-59 w-69 rounded-full flex items-center justify-center mb-4">
+          <div className="mx-auto h-16 w-16 rounded-full flex items-center justify-center mb-3">
             <img 
-              src="../../../public/logo.jpeg"
-              alt=""
-              className="w-68 h-58 rounded-full object-cover"
+              src="/logo.jpeg"  
+              alt="University Logo"
+              className="w-16 h-16 rounded-full object-cover"
             />
           </div>
-          <h2 className="text-2xl font-bold text-blue-500 mb-2">{schoolName}</h2>
-          <p className="text-black-600 mb-2">University Of Choice</p>
-          <p className="text-red-600 mb-2">Enter your login credentials</p>
+          <h2 className="text-xl font-bold text-blue-600 mb-1">{schoolName}</h2>
+          <p className="text-black-600 text-sm mb-1">University Of Choice</p>
+          <p className="text-red-600 text-sm mb-3">Enter your login credentials</p>
           {error && (
             <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-4 flex items-center">
               <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -115,7 +120,7 @@ const Login = () => {
         </div>
 
         {/* Login Form */}
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-4">
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
@@ -129,7 +134,7 @@ const Login = () => {
                 onChange={handleChange}
                 required
                 autoComplete="username"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-200"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200"
                 placeholder="Enter your email"
               />
             </div>
@@ -146,7 +151,7 @@ const Login = () => {
                 onChange={handleChange}
                 required
                 autoComplete="current-password"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-200"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200"
                 placeholder="Enter your password"
               />
             </div>
@@ -155,7 +160,7 @@ const Login = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-blue-500 text-white py-3 px-4 rounded-lg hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition duration-200 font-semibold disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+            className="w-full bg-blue-500 text-white py-3 px-4 rounded-lg hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-200 font-semibold disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
           >
             {isLoading ? (
               <>
@@ -171,10 +176,9 @@ const Login = () => {
           </button>
         </form>
 
-
         {/* Footer */}
-        <div className="text-center pt-6 border-t border-gray-200">
-          <p className="text-sm text-gray-600">
+        <div className="text-center pt-4 border-t border-gray-200">
+          <p className="text-xs text-gray-500">
             © {new Date().getFullYear()} mmust. All rights reserved.
           </p>
         </div>
